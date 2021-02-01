@@ -1,0 +1,77 @@
+<div class="socket-1">
+</div>
+
+<form class="multi-element d-flex flex-column align-center">
+
+    <div class="section w-50" [formGroup]="form">
+        <p>Please select your document state:</p>
+
+        <div class="d-flex jc-space-between">
+            <div>
+                <input formControlName="sentDocument" type="radio" id="already-sent" checked [value]="SENT">
+                <label for="already-sent">Already Send</label>
+            </div>
+            <div>
+                <input formControlName="sentDocument" type="radio" id="not-sent" checked [value]="NOT_SENT">
+                <label for="not-sent">Not Sent Yet</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="section w-50">
+        <ng-container [ngSwitch]="form.get('sentDocument')?.value">
+            <ng-container *ngSwitchCase="SENT" [formGroup]="sentForm">
+                <app-drop-area (change)="handleUpload($event)">
+                    <div class="drop-area d-flex jc-center align-center">
+                        Drop your files here
+                    </div>
+                </app-drop-area>
+                <div class="red-buttons text-center" (click)="fileInput.click()">
+                    <app-button class="flo-large-button">Or click</app-button>
+                </div>
+                <input #fileInput type="file" style="display:none" (change)="handleUpload($any($event)?.target?.files)">
+
+
+                <div class="input-container d-flex flex-column">
+                    <label for="date">Pick date</label>
+                    <input formControlName="date" type="date" id="date">
+                    <textarea formControlName="comment" cols="20" rows="10" type="text"></textarea>
+                    <app-button class="flo-large-button" [disabled]="sentForm.invalid">Submit</app-button>
+                </div>
+
+            </ng-container>
+
+            <ng-container *ngSwitchCase="NOT_SENT" [formGroup]="notSentForm">
+
+                <app-suggestion-input [hints$]="hints$" [controlRef]="passportControlRef">
+                    Passport Number
+                </app-suggestion-input>
+
+
+                <div class="d-flex jc-space-between">
+                    <div>
+                        <input formControlName="isUrgent" type="radio" id="urgent" checked [value]="URGENT">
+                        <label for="urgent">Urgent</label>
+                    </div>
+                    <div>
+                        <input formControlName="isUrgent" type="radio" id="not-urgent" checked [value]="NOT_URGENT">
+                        <label for="not-urgent">Not Urgent</label>
+                    </div>
+                </div>
+
+                <div class="input-container d-flex flex-column">
+                    <label for="end-date">Pick date</label>
+                    <input formControlName="deadline" type="date" id="end-date" />
+
+                    <app-button class="flo-large-button" [disabled]="notSentForm.invalid">Submit</app-button>
+                </div>
+            </ng-container>
+
+            <ng-container *ngSwitchDefault>
+            </ng-container>
+        </ng-container>
+    </div>
+</form>
+
+<div class="socket-4">
+</div>

@@ -1,0 +1,18 @@
+@use "sass:map";
+@import "colors";
+
+:host {
+    height: 100vh;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    background: map.get($flo-green, 200);
+}
+
+a {
+    padding: 20px;
+    transition: 0.3s;
+    &:hover {
+        background: map.get($flo-yellow, 200);
+    }
+}

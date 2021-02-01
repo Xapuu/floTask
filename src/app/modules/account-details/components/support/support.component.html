@@ -1,0 +1,12 @@
+<form class="socket-container" [formGroup]="form">
+    <div class="d-flex flex-column">
+        <label for="respondee-email">User Email</label>
+        <input type="text" name="user-email" id="respondee-email">
+        <app-button class="flo-large-button">Submit</app-button>
+    </div>
+
+    <div class="d-flex flex-column">
+        <label for="respondent-response">Please fill your question in the field below</label>
+        <textarea name="respondent-response" id="respondent-response" cols="30" rows="2"></textarea>
+    </div>
+</form>

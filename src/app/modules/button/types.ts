@@ -1,0 +1,1 @@
+export type ColorScheme = 'primary' | 'secondary' | 'warning';

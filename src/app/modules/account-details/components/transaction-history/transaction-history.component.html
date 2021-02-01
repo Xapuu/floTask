@@ -1,0 +1,17 @@
+<table class="socket-container w-100">
+    <thead>
+        <tr>
+            <th>Amount</th>
+            <th>Currency</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let transaction of transactions">
+            <td>{{transaction.amount}}</td>
+            <td>{{transaction.currency}}</td>
+            <td>{{transaction.date | date}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,48 @@
+@use "sass:map";
+
+@mixin floButtonBaseStyles($colorMap, $textColor, $fontSize) {
+    .flo-button {
+        background: map.get($colorMap, 400);
+        color: $textColor;
+        width: inherit;
+        height: inherit;
+        font-size: $fontSize;
+        vertical-align: middle;
+        cursor: pointer;
+        transition: 0.3s linear;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:disabled {
+            pointer-events: none;
+            background: map.get($colorMap, 100);
+            color: $light-primary-text;
+        }
+
+        &.inactive {
+            background: map.get($colorMap, 50);
+        }
+    }
+}
+
+@mixin floButton($colorMap) {
+    .flo-large-button {
+        width: 80px;
+        height: 20px;
+
+        @include floButtonBaseStyles($colorMap, $dark-primary-text, 15px);
+    }
+    .flo-medium-button {
+        width: 50px;
+        height: 15px;
+        @include floButtonBaseStyles($colorMap, $dark-primary-text, 10px);
+    }
+    .flo-small-button {
+        width: 40px;
+        height: 10px;
+        border-radius: 10px;
+        @include floButtonBaseStyles($colorMap, $dark-primary-text, 6px);
+    }
+}

@@ -1,0 +1,64 @@
+<div class="socket-1">
+</div>
+
+<div class="multi-element">
+    <div>
+        <p>Regular buttons</p>
+        <div>
+            <app-button class="flo-large-button">Hello</app-button>
+            <app-button class="flo-medium-button">Hello</app-button>
+            <app-button class="flo-small-button">Hello</app-button>
+        </div>
+
+        <div>
+            <app-button [disabled]="true" class="flo-large-button">Hello</app-button>
+            <app-button [disabled]="true" class="flo-medium-button">Hello</app-button>
+            <app-button [disabled]="true" class="flo-small-button">Hello</app-button>
+        </div>
+
+        <div class="yellow-buttons">
+            <app-button class="flo-large-button">Hello</app-button>
+            <app-button class="flo-medium-button">Hello</app-button>
+            <app-button class="flo-small-button">Hello</app-button>
+        </div>
+
+        <div class="yellow-buttons">
+            <app-button [disabled]="true" class="flo-large-button">Hello</app-button>
+            <app-button [disabled]="true" class="flo-medium-button">Hello</app-button>
+            <app-button [disabled]="true" class="flo-small-button">Hello</app-button>
+        </div>
+
+        <div class="red-buttons">
+            <app-button class="flo-large-button">Hello</app-button>
+            <app-button class="flo-medium-button">Hello</app-button>
+            <app-button class="flo-small-button">Hello</app-button>
+        </div>
+
+        <div class="red-buttons">
+            <app-button [disabled]="true" class="flo-large-button">Hello</app-button>
+            <app-button [disabled]="true" class="flo-medium-button">Hello</app-button>
+            <app-button [disabled]="true" class="flo-small-button">Hello</app-button>
+        </div>
+    </div>
+
+    <div>
+        <p>Toggle case</p>
+        <app-toggle>
+            <app-button class="flo-large-button">Case 1</app-button>
+            <app-button class="flo-large-button">Case 2</app-button>
+            <app-button class="flo-large-button">Case 3</app-button>
+        </app-toggle>
+        <app-toggle [focusedIndex]="1" class="yellow-buttons">
+            <app-button class="flo-large-button">Case 1</app-button>
+            <app-button class="flo-large-button">Case 2</app-button>
+            <app-button class="flo-large-button">Case 3</app-button>
+        </app-toggle>
+        <app-toggle class="red-buttons">
+            <app-button class="flo-large-button">Case 1</app-button>
+            <app-button class="flo-large-button">Case 2</app-button>
+            <app-button class="flo-large-button">Case 3</app-button>
+        </app-toggle>
+    </div>
+</div>
+<div class="socket-1">
+</div>

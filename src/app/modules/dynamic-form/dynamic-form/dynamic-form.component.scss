@@ -1,0 +1,28 @@
+@use "sass:map";
+@import "colors";
+
+:host {
+    width: 100%;
+    height: 100%;
+}
+
+.active {
+    .drop-area {
+        background: map.get($flo-green, 500);
+    }
+}
+
+.drop-area {
+    background: map.get($flo-green, 200);
+    height: 80px;
+}
+
+.input-container {
+    :last-child {
+        align-self: flex-end;
+    }
+}
+
+.section {
+    min-width: 380px;
+}

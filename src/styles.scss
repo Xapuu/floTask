@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+@use "sass:map";
+
+@import "./app/modules//button/components/button/button.component.scss";
+@import "colors";
+@import "mixins";
+
+// default primary theme
+@include floButton($flo-green);
+
+.yellow-buttons {
+    @include floButton($flo-yellow);
+}
+.red-buttons {
+    @include floButton($flo-red);
+}
+
+body {
+    height: 100vh;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+@include socket-container();
+
+$slimComponentHeight: 100px;
+$sidebarWidth: 200px;
+
+.socket-1 {
+    width: 100%;
+    height: $slimComponentHeight;
+    background-color: map.get($flo-red, 100);
+}
+
+.multi-element {
+    width: 100%;
+    height: calc(100% - #{2 * $slimComponentHeight});
+    display: flex;
+}
+
+.socket-2 {
+    width: 40% !important;
+    height: calc(100% - #{$slimComponentHeight});
+    background-color: map.get($flo-green, 100);
+    
+    
+}
+.socket-3 {
+    width: 60% !important;
+    height: calc(100% - #{$slimComponentHeight});
+    background-color: map.get($flo-yellow, 100);
+}
+
+.socket-4 {
+    width: 100%;
+    height: $slimComponentHeight;
+    background-color: map.get($flo-red, 100);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+}
+.jc-space-between {
+    justify-content: space-between;
+}
+.jc-center {
+    justify-content: center;
+}
+.flex-column {
+    flex-direction: column;
+}
+.align-center {
+    align-items: center;
+}
+
+.w-10 {
+    width: 10%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-100 {
+    width: 100%;
+}

@@ -1,0 +1,11 @@
+<label for="passport-number">
+    <ng-content></ng-content>
+</label>
+
+<input #inputRef autocomplete="off" class="w-100"  [formControl]="controlRef" type="text"
+    id="passport-number" (focus)="focusIn()" />
+<div #dropdownRef [ngClass]="{'visible-input': autoCompleteVisible}" class="dropdown-hints">
+    <div class="dropdown-option" *ngFor="let hint of filteredHints$ | async" (click)="selectOption(hint)">
+        {{hint}}
+    </div>
+</div>

@@ -1,0 +1,23 @@
+@use "sass:map";
+@import "colors";
+
+:host {
+    position: relative;
+}
+.dropdown-hints {
+    position: absolute;
+    display: none;
+
+    &.visible-input {
+        display: block;
+    }
+
+    .dropdown-option {
+        cursor: pointer;
+        background: map.get($flo-green, 200);
+
+        &:hover {
+            background: map.get($flo-yellow, 300);
+        }
+    }
+}

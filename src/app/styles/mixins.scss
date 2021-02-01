@@ -1,0 +1,11 @@
+$pagePadding: 10px;
+
+@mixin socket-container {
+    .socket-container {
+        max-width: inherit;
+        max-height: 100%;
+        overflow: scroll;
+        padding: $pagePadding;
+        display: block;
+    }
+}
